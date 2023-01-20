@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import UserFinder from "./components/UserFinder";
+import UsersContext from "./store/users-context";
+// import Users from "./components/Users";
+
+const DUMMY_USERS = [
+  {id: 'u1', name: 'Danushka'},
+  {id: 'u2', name: 'Lakmi'},
+  {id: 'u3', name: 'Supuni'}
+]
+
+const App = () => {
+  const usersContext = {
+    users: DUMMY_USERS
+  }
+  
+  return(
+    <UsersContext.Provider value={usersContext}>
+      {/* <Users /> */}
+      <UserFinder />
+    </UsersContext.Provider >
+  )
 }
 
-export default App;
+export default App
