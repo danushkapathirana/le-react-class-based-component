@@ -1,11 +1,13 @@
 import React from "react";
 
-import Users from "./components/Users";
+import UserFinder from "./components/UserFinder";
+// import Users from "./components/Users";
 
 const App = () => {
   return(
     <div>
-      <Users />
+      {/* <Users /> */}
+      <UserFinder />
     </div>
   )
 }
